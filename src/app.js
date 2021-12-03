@@ -14,7 +14,7 @@ app.use(require('./routes/user_routes'))
 app.use(require('./routes/credit_routes'))
 
 app.get('/', (req, res)=>{
-  res.json('Welcome to  API')
+  res.send('Hello World')
 })
 
 // Starting server
