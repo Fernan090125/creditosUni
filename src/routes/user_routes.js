@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const{ getUserInfo,PostUser,Login,updateUser} = require("../controllers/user_controller");
+const{ getUserInfo,PostUser,Login,updateUser} = require("../controllers/user_Controller");
 
 router.get("/users/:id", getUserInfo);
 router.post("/users", PostUser);
