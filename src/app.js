@@ -17,7 +17,9 @@ app.get('/', (req, res)=>{
   res.send('Hello World')
 })
 
+//puerto=3200
+puerto=process.env.PORT
 // Starting server
-app.listen(3200, ()=>{
+app.listen(puerto, ()=>{
   console.log('server on port', app.get('port'))
 })
