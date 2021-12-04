@@ -8,7 +8,7 @@ userController.getUserInfo = async (req, res) => {
   const user = await User.findById(id);
   const credit = await Credito.findOne({ user });
   console.log(credit);
-  res.json({
+  res.stauts(200).json({
     User: user,
     Credit: credit,
   });
@@ -57,7 +57,7 @@ userController.updateUser = async (req, res) => {
     apellido: req.body.apellido,
   };
   await User.findByIdAndUpdate(id, { $set: user }, { new: true });
-  res.json({
+  res.status(200).json({
     status: "User Updated",
   });
 };
