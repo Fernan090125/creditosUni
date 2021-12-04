@@ -62,4 +62,13 @@ userController.updateUser = async (req, res) => {
   });
 };
 
+userController.deleteUser = async (req, res) => {
+  const { id } = req.params;
+  await User.findByIdAndDelete(id);
+  res.status(200).json({
+    status: "User Deleted",
+  });
+};
+
+
 module.exports = userController;
