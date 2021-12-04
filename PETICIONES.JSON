@@ -1,0 +1,80 @@
+Registro
+POST:https://creditouni.herokuapp.com/users
+
+DATA:{
+	"email": "fernanlambrano09@gmail.com",
+	"password": "mereketengue"
+}
+
+LOGIN:
+POST:https://creditouni.herokuapp.com/login
+
+DATA:{
+"email":"fernanlambrano09@gmail.com",
+	"password":"mereketengue"
+}
+
+
+NUEVOCREDITO:
+POST:https://creditouni.herokuapp.com/credit/id_usuario_mongo
+
+data:{
+	"Nombre": "f",
+	"Cedula": "e",
+	"direccion": "r",
+	"telefono": "n",
+	"ingresos": "a",
+	"programa": "n",
+	"año": "j",
+	"periodo": "o",
+	"valor": 1,
+	"Cuotas": 2,
+	"valorCuota": 3,
+	"CuotaInicial": 4,
+	"FechaLimiteCuotaInicial":"s"
+}
+
+renovarCredito:
+PUT:https://creditouni.herokuapp.com/credit/idcredito
+
+noDATA
+
+INFORMACIONUSUARIO
+GET:https://creditouni.herokuapp.com/users/id_usuario
+
+RETURN:{
+	"User": {
+	  "_id": "61aa66cd5577c47be4f25343",
+	  "email": "fernanlambrano09@gmail.com",
+	  "password": "mereketengue",
+	  "rol": "Estudiante",
+	  "__v": 0
+	},
+	"Credit": {
+	  "_id": "61aa68f76e2fa46e8ddc2f27",
+	  "Estado": "Activo",
+	  "Nombre": "f",
+	  "Cedula": "e",
+	  "direccion": "r",
+	  "telefono": "n",
+	  "ingresos": "a",
+	  "programa": "n",
+	  "año": "j",
+	  "periodo": "o",
+	  "valor": 1,
+	  "Cuotas": 2,
+	  "valorCuota": 3,
+	  "CuotaInicial": 4,
+	  "FechaLimiteCuotaInicial": "s",
+	  "user": [
+		{
+		  "email": "fernanlambrano09@gmail.com",
+		  "password": "mereketengue",
+		  "rol": "Estudiante",
+		  "_id": "61aa66cd5577c47be4f25343",
+		  "__v": 0
+		}
+	  ],
+	  "__v": 0
+	}
+  }
