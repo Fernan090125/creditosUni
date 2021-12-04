@@ -40,6 +40,7 @@ userController.Login = async (req, res) => {
     if (user.password === password) {
       res.status(200).json({
         role: user.rol,
+        id: user._id,
       });
     } else {
       res.status(404).json({
