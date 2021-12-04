@@ -14,21 +14,28 @@ creditController.NewCredit = async (req, res) => {
     const credit = new Credito(req.body);
     credit.user = user;
     await credit.save();
-    res.json({
-      status: "Credito guardado",
+    res.status(200).json({
+      message: "Credito guardado",
+      id: credit._id,
     });
   }
 };
 
 creditController.RenovateCredit = async (req, res) => {
+  try{
   const { id } = req.params;
-  console.log(req.params);
-  const credit = await Credito.findById(id);
-  console.log(credit);
-  await Credito.findByIdAndUpdate(id, {Estado:"Activo"});
-  res.json({
+  const newdata = req.body;
+  const user = await User.findById(id);
+  await Credito.findByIdAndUpdate(user, newdata);
+  await Credito.findByIdAndUpdate(user, {Estado:"Activo"});
+  res.status(200).json({
     status: "Credito renovado",
   });
+}catch(err){
+  res.status(400).json({
+    status: "Error",
+  });
+}
 };
 
 creditController.RemoveCredit = async (req, res) => {
